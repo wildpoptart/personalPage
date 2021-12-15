@@ -94,6 +94,18 @@ p{
   top: 50%;
   transform: translateY(-50%);
 }
+.socialList li.social-e::before{
+  content: '';
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background-image: url('icons/resumeIcon.png');
+  background-size: cover;
+  background-position: center;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 .grid {
   display: grid;
