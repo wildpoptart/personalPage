@@ -12,6 +12,9 @@ h1{
 
 hr{
   border-color: black;
+  background-color: black;
+  height: 1px;
+  border: 0;
 }
 
 footer {
