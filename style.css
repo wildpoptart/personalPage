@@ -10,6 +10,10 @@ h1{
   text-align: center;
 }
 
+hr{
+  border-color: black;
+}
+
 footer {
 	text-align: center ;
   margin-top: 50px;
