@@ -20,9 +20,15 @@
 
     <div class="galleryGrid">
         <ul class="galleryNameList">
-            <li><h3 car>Car Gallery</h3></li>
-            <li><h3 boston>Boston Gallery</h3></li>
-            <li><h3 2023>2023 Gallery</h3></li>
+            <li>
+                <h3 car>Car Gallery</h3>
+            </li>
+            <li>
+                <h3 boston>Boston Gallery</h3>
+            </li>
+            <li>
+                <h3 2023>2023 Gallery</h3>
+            </li>
         </ul>
 
         <div class="galleryContainer">
@@ -37,19 +43,29 @@
         function haveSameAttribute(element1, element2) {
             return Array.from(element1.attributes).some(attr => element2.hasAttribute(attr.name));
         }
-    
+
         document.querySelector('.galleryNameList').addEventListener('click', event => {
             if (event.target.tagName === 'H3') {
+                const clickedAttributes = Array.from(event.target.attributes).map(attr => attr.name);
+
                 document.querySelectorAll('.galleryList > *').forEach(page => {
-                    page.setAttribute('hidden', '');
+                    const pageAttributes = Array.from(page.attributes).map(attr => attr.name);
+
                     if (haveSameAttribute(event.target, page)) {
-                        page.toggleAttribute('hidden');
+                        if (page.hasAttribute('hidden')) {
+                            page.removeAttribute('hidden');
+                        } else {
+                            page.setAttribute('hidden', '');
+                        }
+                    } else {
+                        page.setAttribute('hidden', '');
                     }
                 });
             }
         });
+
     </script>
-    
+
 
 </body>
 

@@ -21,9 +21,9 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.125); */
 }
 
-h1 {
+/* h1 {
   text-align: center;
-}
+} */
 
 h3 {
   user-select: none;
@@ -191,7 +191,7 @@ p {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-gap: 20px;
   align-items: start;
 }
