@@ -1,14 +1,32 @@
 body {
-  background: #aaaaaa;
   max-width: 800px;
   margin: auto;
   padding: 0 16px;
   margin-bottom: 500px;
 
+  background: #aaaaaa;
+  /* background-position: center; */
+}
+
+.body-card{
+  max-width: 800px;
+  margin: auto;
+  padding: 0 16px;
+  margin-bottom: 500px;
+/* 
+  backdrop-filter: blur(7px) saturate(180%);
+  -webkit-backdrop-filter: blur(7px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.64);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125); */
 }
 
 h1 {
   text-align: center;
+}
+
+h3 {
+  user-select: none;
 }
 
 
@@ -30,11 +48,10 @@ a {
 }
 
 .bannerP {
-  text-align: center;
 }
 
 .row {
-  justify-content: center; 
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
 }
@@ -147,8 +164,6 @@ p {
 /*logs*/
 
 .logList {
-
-  height: 160px;
   width: 200px;
   font: 16px/26px Georgia, Garamond, Serif;
   overflow: auto;
@@ -196,6 +211,10 @@ p {
     flex: 100%;
     max-width: 100%;
   }
+
+  .galleryGrid{
+    flex-direction: column;
+  }
 }
 
 /*home button*/
@@ -225,11 +244,81 @@ ul {
   height: 50%;
 }
 
-.galleryList {
+.galleryGrid{
+  display:flex;
+  padding:0px 16px;
+}
+
+.featuredGalleryList{
+  width:100%;
   list-style-position: inside;
 }
 
-.galleryList li {
+.galleryNameList {
   position: relative;
   padding-left: 5px;
+  cursor: pointer;
+  flex:20%;
+}
+
+.galleryList {
+  display: flex;
+  flex: 100%;
+}
+
+.galleryContainer{
+  width:100%;
+}
+
+.galleryOverlay{
+  background-color: #008CBA;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: width .5s ease;
+}
+
+.galleryClass{
+  display:flex;
+  width:100%;
+}
+
+[hidden]{
+  display:none;
+}
+
+
+
+.movieList {
+  list-style-position: inside;
+}
+
+.movieList li {
+  position: relative;
+  padding-left: 5px;
+}
+
+.bookList {
+  list-style-position: inside;
+}
+
+.bookList li {
+  position: relative;
+  padding-left: 5px;
+}
+
+
+.waviy {
+  display:flex;
+}
+.waviy span {
+  position: relative;
+  display: inline-block;
+  animation: flip 2s infinite;
+  animation-delay: calc(.3s * var(--i))
+}
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
 }
