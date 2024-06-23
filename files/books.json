@@ -1,0 +1,18 @@
+[
+    {
+        "cover": "book1-cover.jpg",
+        "title": "Book Title 1",
+        "author": "Author 1",
+        "rating": "★★★★☆",
+        "finishedDate": "2023-05-15",
+        "review": "This is my review of the first book. It was an excellent read with great insights and storytelling."
+    },
+    {
+        "cover": "book2-cover.jpg",
+        "title": "Book Title 2",
+        "author": "Author 2",
+        "rating": "★★★☆☆",
+        "finishedDate": "2023-06-20",
+        "review": "This is my review of the second book. It was a decent read with some good moments but lacked consistency."
+    }
+]

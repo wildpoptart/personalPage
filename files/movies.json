@@ -1,0 +1,27 @@
+[
+    {
+        "poster": "movie1-poster.jpg",
+        "rating": "★★★★☆",
+        "review": "This is my review of the first movie. It was an excellent film with great performances and an engaging story."
+    },
+    {
+        "poster": "movie2-poster.jpg",
+        "rating": "★★★☆☆",
+        "review": "This is my review of the second movie. It was a decent film with some good moments but lacked consistency."
+    },
+    {
+        "poster": "movie2-poster.jpg",
+        "rating": "★★★☆☆",
+        "review": "This is my review of the second movie. It was a decent film with some good moments but lacked consistency."
+    },
+    {
+        "poster": "movie2-poster.jpg",
+        "rating": "★★★☆☆",
+        "review": "This is my review of the second movie. It was a decent film with some good moments but lacked consistency."
+    },
+    {
+        "poster": "movie2-poster.jpg",
+        "rating": "★★★☆☆",
+        "review": "This is my review of the second movie. It was a decent film with some good moments but lacked consistency."
+    }
+]
