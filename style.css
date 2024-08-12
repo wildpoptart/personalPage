@@ -2,6 +2,14 @@
   --text-color: #969696;
 }
 
+svg{
+  color: rgb(211, 120, 54)
+}
+
+.hidden {
+  display: none;
+}
+
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -99,6 +107,53 @@ nav ul li a {
   opacity: 1;
 }
 
+/* color:rgb(211, 120, 54); */
+/* Styling the tag navigation */
+.tag-nav {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tag-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tag-nav ul div {
+  font-size: small;
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+  color: rgb(211, 120, 54);
+  text-decoration: none;
+}
+
+.tag-nav ul div:hover {
+  text-decoration: underline;
+}
+
+/* Styling the logs */
+.logs {
+  margin: 20px;
+}
+
+.log-entry {
+  padding: 10px 0;
+}
+
+.log-entry .tag {
+  font-size: small;
+  color: rgb(211, 120, 54);
+}
+
+.log-entry .log-text {
+  margin: 5px 0;
+}
+
+/* Hidden class to hide log entries */
+.hidden {
+  display: none;
+}
 
 .feather.feather-twitter {
   width: 17px; /* Adjust the width and height as needed */
