@@ -76,6 +76,30 @@ nav ul li a {
   color: var(--text-color);
 }
 
+.about-content {
+  display: block;
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.25s ease-in-out, height 0.25s ease-in-out;
+  text-align: center;
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.about-content p {
+  margin: 3px 0; /* Adjust the margin values as needed */
+}
+
+/* Class for height transition */
+.about-content.transform-active {
+  height: 50px; /* Adjust this value based on the content size */
+}
+
+/* Class for opacity transition */
+.about-content.opacity-active {
+  opacity: 1;
+}
+
+
 .feather.feather-twitter {
   width: 17px; /* Adjust the width and height as needed */
   height: 17px;
