@@ -3,88 +3,58 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Stan's Page</title>
+	<title>Stan's</title>
 	<meta name="description" content="Stan's Page">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="robots" content="noindex, nofollow">
 	<link rel="stylesheet" href="./style.css">
-	<link rel="icon" type="image/png" href="./img/banana.png">
 </head>
 
 <body>
-	<div class="body-card">
-		<div class="banner">
-			<h1>
-				<a href="./" style="text-decoration: none;">
-					<div class="waviy">
-						<span style="--i:1">S</span>
-						<span style="--i:2">t</span>
-						<span style="--i:3">a</span>
-						<span style="--i:4">n</span>
-					's Page						
-					</div>
-				</a>
-			</h1>
-			<p class="bannerP">welcome</p>
-			<hr>
-		</div>
-
-		<div class="row">
-			<div class="column">
-				<h2><a href="./photos.html">Gallery</a></h2>
-				<ul class="featuredGalleryList">
-					<li class="featuredGalleryList"><a href="./photos.html">Car Gallery</a></li>
-				</ul>
-
+	<div class="container">
+		<section>
+			<h2 style="text-align: center;">---Stan---</h2>
+		</section>
+		<nav>
+			<ul style="display: flex; justify-content: center;">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li>
+					<a href="https://twitter.com/stanyslavb" style="color: var(--text-color);">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+							class="feather feather-twitter">
+							<path
+								d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+							</path>
+						</svg>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<section>
+			<div class="grid">
+				<div class="grid-item"><a href="https://www.stanborsh.xyz/img/falls.JPG"><img src="./img/lowres_falls.jpg" alt="niagara falls"></a></div>
+				<div class="grid-item"><a href="https://www.stanborsh.xyz/img/bike1.JPG"><img src="./img/lowres_bike1.jpg" alt="mybike"></a></div>
+				<div class="grid-item"><a href="https://www.stanborsh.xyz/img/mysubi.png"><img src="./img/lowres_mysubi.jpg" alt="subi"></a></div>
+				<div class="grid-item"><a href="https://www.stanborsh.xyz/img/yellow_integra.JPG"><img src="./img/lowres_yellow_integra.jpg" alt="integra"></a></div>
+				<div class="grid-item"><a href="https://www.stanborsh.xyz/img/wasMon.JPG"><img src="./img/lowres_washMon.jpg" alt="washington Monument"></a></div>
 			</div>
-			<div class="column">
-				<h2><a href="./blog.html">WeB Log</a></h2>
-				<ul class="logList">
-					<li class="logList-a"><a href="./blog.html">2022 Sept 11</a></li>
-				</ul>
-			</div>
-			<div class="column">
-				<h2><a>Reviews</a></h2>
-				<ul class="reviewList">
-					<li class="movieList"><a href="./movies.html">Movie Reviews</a></li>
-					<li class="bookList"><a href="./books.html">Book Reviews</a></li>
-				</ul>
-			</div>
-		</div>
+		</section>
 
-		<div class="row">
-			<div class="column">
-				<h2>Interests</h2>
-				<ul class="intrests" style="list-style-position: inside;">
-					<li class="interests-a">technology - old/new hardware, simple coding/scripting, and data collecting
-					</li>
-					<li class="interests-b">cars - like the Porsche 944, BMW M3 E30, Mazda Rx-7 FC3S, Mercedes SL 500
-						and Subi's</li>
-					<li class="interests-c">comics - DC comics fan, but i do read manga and manwhua</li>
-					<li class="interests-d">video games - retro games, fighting games and FPS's</li>
-					<li class="interests-e">working out - doing my best)), also i like cycling [photo of my bike below]
-					</li>
-					<li class="interests-e">photography - usually ill photograph neat cars, buildings usually to capture
-						the verticality</li>
-				</ul>
+		<section>
+			<h2 style="text-align: center;">---Logs---</h2>
+			<div class="logs">
+				<p>Log 1</p>
+				<p>Log 2</p>
+				<p>Log 3</p>
 			</div>
-		</div>
-
-		<h2>Featured Photos</h2>
-		<div class="grid">
-			<a href="https://www.stanborsh.xyz/img/falls.JPG" target="_blank"><img src="./img/lowres_falls.jpg" alt="niagara falls"></a>
-			<a href="https://www.stanborsh.xyz/img/bike1.JPG" target="_blank"><img src="./img/lowres_bike1.jpg" alt="mybike"></a>
-			<a href="https://www.stanborsh.xyz/img/mysubi.png" target="_blank"><img src="./img/lowres_mysubi.jpg" alt="subi"></a>
-		</div>
+		</section>
 
 		<footer>
-			<hr>
-			<ul class="socialList">
-				<div class="social-e"><a href="./files/Resume 2.pdf" target="_blank">Resume</a></div>
-				<p>bye 👋</p>
-			</ul>
+			<p>bye 👋</p>
 		</footer>
 	</div>
+	<script src="./script.js" defer></script>
 
 </body>
 
