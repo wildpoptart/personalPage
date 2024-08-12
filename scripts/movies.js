@@ -27,7 +27,11 @@ function createFlipCard(movie) {
   const rating = document.createElement('div');
   rating.classList.add('star-rating');
   rating.textContent = movie.rating;
-  cardFront.appendChild(poster);
+  const title = document.createElement('div');
+  title.classList.add('title');
+  title.textContent = movie.title;
+  // cardFront.appendChild(poster);
+  cardFront.appendChild(title);
   cardFront.appendChild(rating);
 
   const cardBack = document.createElement('div');

@@ -1,27 +1,358 @@
 [
     {
-        "poster": "movie1-poster.jpg",
-        "rating": "★★★★☆",
-        "review": "This is my review of the first movie. It was an excellent film with great performances and an engaging story."
+      "title": "Challengers (2024)",
+      "rating": "★★½",
+      "review":""
     },
     {
-        "poster": "movie2-poster.jpg",
-        "rating": "★★★☆☆",
-        "review": "This is my review of the second movie. It was a decent film with some good moments but lacked consistency."
+      "title": "The Fall Guy (2024)",
+      "rating": "★★★★",
+      "review":""
     },
     {
-        "poster": "movie2-poster.jpg",
-        "rating": "★★★☆☆",
-        "review": "This is my review of the second movie. It was a decent film with some good moments but lacked consistency."
+      "title": "Dune: Part Two (2024)",
+      "rating": "★★★★★",
+      "review":""
     },
     {
-        "poster": "movie2-poster.jpg",
-        "rating": "★★★☆☆",
-        "review": "This is my review of the second movie. It was a decent film with some good moments but lacked consistency."
+      "title": "Godzilla Minus One (2023)",
+      "rating": "★★★★★",
+      "review":""
     },
     {
-        "poster": "movie2-poster.jpg",
-        "rating": "★★★☆☆",
-        "review": "This is my review of the second movie. It was a decent film with some good moments but lacked consistency."
+      "title": "Lamborghini: The Man Behind the Legend (2022)",
+      "rating": "★★½",
+      "review":""
+    },
+    {
+      "title": "All Quiet on the Western Front (2022)",
+      "rating": "★★★★½",
+      "review":""
+    },
+    {
+      "title": "Nope (2022)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "Rubikon (2022)",
+      "rating": "★½",
+      "review":""
+    },
+    {
+      "title": "Top Gun: Maverick (2022)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "The Batman (2022)",
+      "rating": "★★★★★",
+      "review":""
+    },
+    {
+      "title": "Uncharted (2022)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "Death on the Nile (2022)",
+      "rating": "★★½",
+      "review":""
+    },
+    {
+      "title": "The King's Man (2021)",
+      "rating": "★★½",
+      "review":""
+    },
+    {
+      "title": "House of Gucci (2021)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "No Time to Die (2021)",
+      "rating": "★★",
+      "review":""
+    },
+    {
+      "title": "Dune (2021)",
+      "rating": "★★★★★",
+      "review":""
+    },
+    {
+      "title": "The Mitchells vs. The Machines (2021)",
+      "rating": "★★★½",
+      "review":""
+    },
+    {
+      "title": "Godzilla vs. Kong (2021)",
+      "review":""
+    },
+    {
+      "title": "The Beta Test (2021)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "Tenet (2020)",
+      "rating": "★★★★",
+      "review":""
+    },
+    {
+      "title": "Sonic the Hedgehog (2020)",
+      "rating": "★★½",
+      "review":""
+    },
+    {
+      "title": "Knives Out (2019)",
+      "rating": "★★",
+      "review":""
+    },
+    {
+      "title": "Uncut Gems (2019)",
+      "rating": "★★★★",
+      "review":""
+    },
+    {
+      "title": "Ad Astra (2019)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "Marriage Story (2019)",
+      "rating": "★★★★½",
+      "review":""
+    },
+    {
+      "title": "Godzilla: King of the Monsters (2019)",
+      "review":""
+    },
+    {
+      "title": "Dragon Ball Super: Broly (2018)",
+      "rating": "★★★★½",
+      "review":""
+    },
+    {
+      "title": "Venom (2018)",
+      "rating": "★★½",
+      "review":""
+    },
+    {
+      "title": "Green Book (2018)",
+      "rating": "★★★½",
+      "review":""
+    },
+    {
+      "title": "Pacific Rim: Uprising (2018)",
+      "rating": "★★",
+      "review":""
+    },
+    {
+      "title": "Upgrade (2018)",
+      "rating": "★★½",
+      "review":""
+    },
+    {
+      "title": "A Quiet Place (2018)",
+      "rating": "★★★★",
+      "review":""
+    },
+    {
+      "title": "Murder on the Orient Express (2017)",
+      "rating": "★★",
+      "review":""
+    },
+    {
+      "title": "Blade Runner 2049 (2017)",
+      "rating": "★★★★",
+      "review":""
+    },
+    {
+      "title": "Kingsman: The Golden Circle (2017)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "Battle of the Sexes (2017)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "The Mummy (2017)",
+      "rating": "★½",
+      "review":""
+    },
+    {
+      "title": "The Lego Batman Movie (2017)",
+      "rating": "★★★★★",
+      "review":""
+    },
+    {
+      "title": "Rogue One: A Star Wars Story (2016)",
+      "rating": "★★★★★",
+      "review":""
+    },
+    {
+      "title": "The Accountant (2016)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "La La Land (2016)",
+      "rating": "★★★★★",
+      "review":""
+    },
+    {
+      "title": "The Big Short (2015)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "The Hunger Games: Mockingjay – Part 2 (2015)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "Spectre (2015)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "Hardcore Henry (2015)",
+      "rating": "★★★★★",
+      "review":""
+    },
+    {
+      "title": "The Martian (2015)",
+      "rating": "★★★★",
+      "review":""
+    },
+    {
+      "title": "Sicario (2015)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "Avengers: Age of Ultron (2015)",
+      "rating": "★★★½",
+      "review":""
+    },
+    {
+      "title": "Chappie (2015)",
+      "rating": "★★★★½",
+      "review":""
+    },
+    {
+      "title": "Kingsman: The Secret Service (2014)",
+      "rating": "★★★½",
+      "review":""
+    },
+    {
+      "title": "The Hunger Games: Mockingjay – Part 1 (2014)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "Interstellar (2014)",
+      "rating": "★★★★★",
+      "review":""
+    },
+    {
+      "title": "Nightcrawler (2014)",
+      "rating": "★★★½",
+      "review":""
+    },
+    {
+      "title": "Godzilla (2014)",
+      "review":""
+    },
+    {
+      "title": "The Lego Movie (2014)",
+      "rating": "★★★★★",
+      "review":""
+    },
+    {
+      "title": "Whiplash (2014)",
+      "rating": "★★★★½",
+      "review":""
+    },
+    {
+      "title": "The Secret Life of Walter Mitty (2013)",
+      "rating": "★★★½",
+      "review":""
+    },
+    {
+      "title": "The Wolf of Wall Street (2013)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "The Hunger Games: Catching Fire (2013)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "Gravity (2013)",
+      "rating": "★★★½",
+      "review":""
+    },
+    {
+      "title": "Elysium (2013)",
+      "rating": "★★★½",
+      "review":""
+    },
+    {
+      "title": "Pacific Rim (2013)",
+      "rating": "★★★★",
+      "review":""
+    },
+    {
+      "title": "Man of Steel (2013)",
+      "rating": "★★★★½",
+      "review":""
+    },
+    {
+      "title": "Skyfall (2012)",
+      "rating": "★★★½",
+      "review":""
+    },
+    {
+      "title": "The Hunger Games (2012)",
+      "rating": "★★★",
+      "review":""
+    },
+    {
+      "title": "In Time (2011)",
+      "rating": "★★½",
+      "review":""
+    },
+    {
+      "title": "TRON: Legacy (2010)",
+      "rating": "★★★★",
+      "review":""
+    },
+    {
+      "title": "Megamind (2010)",
+      "rating": "★★★★½",
+      "review":""
+    },
+    {
+      "title": "Inception (2010)",
+      "rating": "★★★½",
+      "review":""
+    },
+    {
+      "title": "Remember Me (2010)",
+      "rating": "★",
+      "review":""
+    },
+    {
+      "title": "District 9 (2009)",
+      "rating": "★★★★",
+      "review":""
+    },
+    {
+      "title": "Fast & Furious (2009)",
+      "review":""
     }
-]
+  ]
