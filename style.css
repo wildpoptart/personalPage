@@ -223,3 +223,55 @@ nav ul li a {
   from { transform: rotate3d(1, 1, 1, 0deg); }
   to { transform: rotate3d(1, 1, 1, 360deg); }
 }
+
+
+/* Fullscreen image styles */
+.fullscreen-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.fullscreen-img img {
+  max-width: 10px;
+  max-height: 10px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.rating {
+  display: inline-flex;
+  font-size: 24px;
+  color: gold;
+}
+
+.star {
+  position: relative;
+}
+
+.star.half::before {
+  content: '★';
+  color: gray;
+  position: absolute;
+  left: 0;
+}
+
+.star.half::after {
+  content: '★';
+  color: gold;
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+.star.empty {
+  color: gray;
+}

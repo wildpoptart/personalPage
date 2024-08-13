@@ -29,3 +29,35 @@ function filterLogs(tag) {
     }
   });
 }
+
+
+// JavaScript to handle opening and closing images in full screen
+function openFullscreen(imgElement) {
+    const existingFullscreenImg = document.querySelector('.fullscreen-img');
+  
+    if (existingFullscreenImg) {
+      // If an image is already in fullscreen, remove it
+      existingFullscreenImg.remove();
+    } else {
+      // Create a new div for the full screen image
+      const fullscreenDiv = document.createElement('div');
+      fullscreenDiv.classList.add('fullscreen-img');
+      fullscreenDiv.onclick = closeFullscreen;
+  
+      // Create an image element for the high-resolution image
+      const highResImg = document.createElement('img');
+      highResImg.src = imgElement.getAttribute('data-highres');
+      fullscreenDiv.appendChild(highResImg);
+  
+      // Append the fullscreen div to the body
+      document.body.appendChild(fullscreenDiv);
+    }
+  }
+  
+  function closeFullscreen() {
+    const fullscreenImg = document.querySelector('.fullscreen-img');
+    if (fullscreenImg) {
+      fullscreenImg.remove();
+    }
+  }
+  
