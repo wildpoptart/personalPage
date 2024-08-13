@@ -224,7 +224,6 @@ nav ul li a {
   to { transform: rotate3d(1, 1, 1, 360deg); }
 }
 
-
 /* Fullscreen image styles */
 .fullscreen-img {
   position: fixed;
@@ -240,12 +239,14 @@ nav ul li a {
 }
 
 .fullscreen-img img {
-  max-width: 10px;
-  max-height: 10px;
+  max-width: 90%;
+  max-height: 90%;
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+
 .rating {
   display: inline-flex;
   font-size: 24px;
