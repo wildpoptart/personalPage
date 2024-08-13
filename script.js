@@ -13,14 +13,18 @@ tagLinks.forEach(link => {
   link.addEventListener('click', event => {
     event.preventDefault();
     const tag = link.getAttribute('data-tag');
-    filterLogs(tag);
+    if (link.style.textDecoration === 'underline') {
+        link.style.textDecoration = 'none'; // Remove underline if already present
+    } else {
+        link.style.textDecoration = 'underline'; // Add underline if not present
+    }    filterLogs(tag);
   });
 });
 
 function filterLogs(tag) {
   logEntries.forEach(entry => {
     const entryTag = entry.querySelector('.tag').textContent.trim();
-    if (entryTag.includes(tag)) {
+    if (!entryTag.includes(tag)) {
         entry.classList.toggle('hidden');
     }
   });

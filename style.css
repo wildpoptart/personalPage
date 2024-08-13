@@ -1,5 +1,6 @@
 :root {
   --text-color: #969696;
+  user-select: none;
 }
 
 svg{
@@ -30,7 +31,7 @@ h1, h2 {
 
 .grid {
   display: grid; /* Change from flex to grid */
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Automatically fill columns with minimum width of 250px */
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Automatically fill columns with minimum width of 100px */
   gap: 10px; /* Add gap between grid items */
 }
 
@@ -45,10 +46,6 @@ h1, h2 {
   object-fit: cover; /* Maintain aspect ratio and cover the grid item */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.grid-item:hover img {
-  filter: brightness(80%); /* Adjust brightness on hover */
 }
 
 footer {
@@ -66,7 +63,6 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-
 
 nav ul {
   display: flex;
@@ -148,6 +144,12 @@ nav ul li a {
 
 .log-entry .log-text {
   margin: 5px 0;
+  white-space: pre-wrap;
+}
+
+.log-entry p{
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Hidden class to hide log entries */
@@ -160,16 +162,26 @@ nav ul li a {
   height: 17px;
 }
 
+.about-link{
+  cursor: pointer;
+  user-select: none;
+}
+
 @media screen and (min-width: 768px) {
   /* 5 columns for larger screens */
   .grid-sizer { width: 20%; }
 }
 
-
-.scene {
-  width: 100px; /* Reduced width */
-  height: 100px; /* Reduced height */
-  perspective: 400px; /* Adjusted perspective */
+.background-scene {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px; /* Increased width */
+  height: 300px; /* Increased height */
+  perspective: 800px; /* Adjusted perspective */
+  z-index: -1;
+  opacity: .2;
 }
 
 .cube {
@@ -177,31 +189,30 @@ nav ul li a {
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transform: rotateX(-30deg) rotateY(-45deg);
-  animation: spin 1s infinite linear;
+  animation: spin 7s infinite linear;
 }
 
 .face {
   position: absolute;
-  width: 100px; /* Reduced width */
-  height: 100px; /* Reduced height */
-  border: 2px solid orange; /* Orange wireframe */
-  box-sizing: border-box; /* Ensure border is included in size */
-  color: orange; /* Text color to match wireframe */
-  background: none; /* Remove background */
+  width: 300px; /* Increased width */
+  height: 300px; /* Increased height */
+  border: 2px solid orange;
+  box-sizing: border-box;
+  color: orange;
+  background: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px; /* Reduced font size */
+  font-size: 20px; /* Adjusted font size */
   font-weight: bold;
 }
 
-.front  { transform: translateZ(50px); }
-.back   { transform: rotateY(180deg) translateZ(50px); }
-.right  { transform: rotateY(90deg) translateZ(50px); }
-.left   { transform: rotateY(-90deg) translateZ(50px); }
-.top    { transform: rotateX(90deg) translateZ(50px); }
-.bottom { transform: rotateX(-90deg) translateZ(50px); }
+.front  { transform: translateZ(150px); }
+.back   { transform: rotateY(180deg) translateZ(150px); }
+.right  { transform: rotateY(90deg) translateZ(150px); }
+.left   { transform: rotateY(-90deg) translateZ(150px); }
+.top    { transform: rotateX(90deg) translateZ(150px); }
+.bottom { transform: rotateX(-90deg) translateZ(150px); }
 
 @keyframes spin {
   from { transform: rotateX(-30deg) rotateY(-45deg) rotateZ(30deg); }
