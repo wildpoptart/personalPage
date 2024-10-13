@@ -189,7 +189,7 @@ nav ul li a {
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  animation: spin 7s infinite linear;
+  animation: spin 9s infinite linear;
 }
 
 .face {
@@ -216,7 +216,7 @@ nav ul li a {
 
 @keyframes spin {
   from { transform: rotateX(-30deg) rotateY(-45deg) rotateZ(30deg); }
-  to { transform: rotateX(-30deg) rotateY(320deg) rotateZ(300deg); }
+  to { transform: rotateX(-30deg) rotateY(315deg) rotateZ(300deg); }
 }
 
 @keyframes tumble {
