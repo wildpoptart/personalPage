@@ -1,0 +1,67 @@
+{
+  "movies": [
+    {
+      "title": "F1 Movie",
+      "date": "06/29/25",
+      "rating": 3,
+      "review": "Fun racing movie. Fun to watch as a F1 race watcher. Not sure if Brad pit can pull off this role or if the script was eh. Next gotta watch Days of Thunder"
+    },
+    {
+      "title": "Extraction I & II",
+      "date": "10/6/24",
+      "rating": 3.5,
+      "review": "These were a good set of action movies from Chris. I feel like every male actor has this phase where they want to do a action/ big pew pew movie. First Extraction, good setup, story decent. Even left some crumbs for the next movie. He did well as a action guy. There were some nice cinematography shots in both as well. Camera work nice and experimental-ish."
+    },
+    {
+      "title": "Transformers One",
+      "date": "Recent",
+      "rating": 4.5,
+      "review": "This movie was actually really solid. Couldnt ask for more. Maybe Megatrons reasoning could have been a little more fleshed out, but as it is, it was good. The comedy was solid. Animation was solid. Each of D-16 and Orion Pax' transformations into what we know them as today was so good. The voice actors were good too. Scarlets was maybe to noticable for me, but the maturing voices of Mega and Optimus as they went through thier 3 transformations was a good touch. Would rewatch."
+    },
+    {
+      "title": "Fly Me to the Moon",
+      "date": "8/19/24",
+      "rating": 4,
+      "review": "Enojoyed the period-ish piece. Kinda goofy. Tatum is just rockin them turtle neck sweaters its good. Story idea alright, plays into the conpiracy aspect of it all. Honelty Tataum is lo-key goated might be in contention for the ryan gosling / ryan reynolds spot."
+    },
+    {
+      "title": "Deadpool & Wolverine",
+      "date": "8/14/24",
+      "rating": 3,
+      "review": "Honestly was an enjoyable watch. Funny seeing Hugh in the yellow suit, but it looked good. Was half expecting him to sing. Lots of little references. Ugly dog. whooooimbouttomakeanameformyself"
+    },
+    {
+      "title": "Despicable Me 4",
+      "date": "8/12/24",
+      "rating": 0.5,
+      "review": "The movie was actually bad. Like even a main premiss of the story just flops mainly because there just isnt any substance to the story. Would have been way better if they only focused on Gru deciding to live a family life or a villain life. But he doesnt have any character conflict at all."
+    }
+  ],
+  "activities": [
+    {
+      "title": "Evening Run",
+      "date": "11/05/24",
+      "distance": "2.50 miles",
+      "time": "26.3 minutes",
+      "avgHR": "175.8 bpm",
+      "heartRateData": "M 175.2 74.7 L 170.6 75.0 L 165.9 75.1 L 150.2 76.3 L 148.8 76.3 L 153.1 75.9 L 146.7 76.4 L 139.2 76.8 L 131.9 77.3 L 120.6 77.8 L 110.7 78.5 L 108.4 78.9 L 108.7 79.4 L 112.8 81.7 L 116.0 84.0 L 121.8 88.9 L 125.0 91.0 L 128.2 93.5 L 128.5 94.1 L 131.1 96.1 L 135.1 100.1 L 137.5 101.2 L 144.1 105.9 L 144.7 107.1 L 147.0 108.2 L 148.2 109.6 L 154.0 113.6 L 158.7 117.8 L 161.6 119.5 L 167.9 124.1 L 176.7 131.4 L 179.3 132.9 L 180.4 134.7 L 183.3 136.9 L 182.8 137.3 L 181.6 137.5 L 179.0 137.5 L 177.5 137.3 L 176.7 137.0 L 166.8 130.1 L 164.8 127.9 L 161.8 125.7 L 159.5 123.4 L 154.0 119.3 L 151.1 116.4 L 140.7 109.8 L 138.6 107.8 L 136.0 106.1 L 129.6 100.2 L 125.6 97.9 L 124.4 96.6 L 124.4 95.9 L 122.6 94.4 L 118.0 91.5 L 112.2 87.5 L 111.0 86.4 L 108.1 84.3 L 104.1 80.3 L 99.7 77.3 L 97.1 74.7 L 93.3 72.6 L 89.3 69.5 L 83.7 64.5 L 81.1 63.1 L 76.8 59.4 L 73.3 57.1 L 63.7 48.9 L 61.7 47.7 L 55.0 42.3 L 51.5 40.4 L 48.3 38.1 L 45.7 35.7 L 41.9 33.1 L 39.9 31.0 L 36.4 28.6 L 30.9 23.9 L 29.2 22.9 L 23.1 18.1 L 22.2 17.1 L 17.5 13.9 L 16.7 12.9 L 17.2 12.5 L 21.6 12.6 L 23.3 12.8 L 27.4 16.3 L 28.9 17.9 L 40.2 25.5 L 46.6 30.5 L 47.7 31.9 L 49.2 32.7 L 50.3 34.1 L 52.7 36.0 L 53.8 36.5 L 55.3 37.6 L 57.3 39.3 L 61.1 41.8 L 62.8 43.4 L 64.3 44.3 L 67.8 47.1 L 68.6 47.9 L 77.1 53.6 L 79.4 55.6 L 80.3 56.9 L 82.3 58.5 L 83.7 60.1 L 86.6 61.7 L 87.5 62.7 L 89.3 63.5 L 91.0 65.5 L 93.9 67.1 L 98.8 71.1 L 100.9 72.4 L 102.0 73.8 L 105.2 76.3 L 106.1 76.8 L 107.5 76.9 L 110.2 76.9 L 117.4 76.4 L 125.6 76.0 L 146.2 74.7"
+    },
+    {
+      "title": "Night Run",
+      "date": "11/01/24",
+      "distance": "2.65 miles",
+      "time": "29.0 minutes",
+      "avgHR": "173.7 bpm",
+      "heartRateData": "M 179.7 71.7 L 176.5 71.9 L 175.3 71.7 L 174.2 71.0 L 173.4 71.0 L 169.4 71.5 L 155.4 72.7 L 147.8 73.1 L 138.0 73.9 L 131.6 74.6 L 127.6 74.9 L 126.6 75.0 L 126.2 75.4 L 136.2 85.2 L 138.4 88.0 L 144.0 93.6 L 144.6 94.8 L 146.6 96.5 L 150.4 100.5 L 151.4 102.4 L 152.2 103.4 L 156.0 106.7 L 162.2 113.6 L 165.2 116.4 L 167.6 119.4 L 169.2 120.9 L 174.4 126.7 L 178.3 130.4 L 179.7 132.8 L 183.3 136.9 L 182.5 137.3 L 180.5 137.5 L 179.7 137.4 L 179.1 137.2 L 178.1 136.6 L 176.1 133.9 L 175.0 132.9 L 174.4 132.0 L 172.6 130.5 L 171.6 129.3 L 171.2 128.4 L 170.0 127.5 L 164.4 121.4 L 163.6 120.1 L 162.0 118.8 L 160.8 117.1 L 159.0 115.2 L 157.2 113.9 L 155.0 111.2 L 153.2 109.5 L 152.4 108.9 L 151.8 108.0 L 149.8 105.9 L 148.2 103.6 L 143.6 99.3 L 138.4 93.0 L 135.8 90.6 L 135.2 89.4 L 132.2 86.6 L 129.2 83.3 L 127.8 82.3 L 123.5 77.0 L 121.3 75.0 L 120.1 73.2 L 115.3 69.3 L 114.1 67.8 L 113.9 66.9 L 112.1 64.7 L 110.1 62.8 L 109.1 61.3 L 107.7 60.4 L 104.3 55.9 L 101.1 53.6 L 100.5 52.6 L 96.3 48.2 L 95.9 47.3 L 94.7 46.0 L 91.1 42.4 L 89.9 40.9 L 86.3 37.4 L 84.5 35.9 L 83.7 34.4 L 81.9 32.8 L 80.1 30.7 L 79.7 29.6 L 77.5 27.4 L 76.3 25.8 L 73.2 22.4 L 69.8 19.4 L 67.0 15.9 L 63.8 13.2 L 62.8 12.7 L 62.0 12.5 L 54.6 13.1 L 55.2 12.9 L 52.8 13.3 L 28.6 15.2 L 26.8 15.6 L 18.5 16.0 L 17.3 16.2 L 16.9 16.4 L 16.7 16.8 L 17.5 18.6 L 20.7 22.3 L 24.3 25.8 L 25.8 27.0 L 26.4 28.2 L 27.4 29.1 L 29.2 31.7 L 32.8 34.8 L 36.2 38.4 L 38.4 40.4 L 41.4 44.4 L 44.6 47.7 L 45.6 49.3 L 46.6 50.3 L 48.4 51.7 L 50.0 53.1 L 51.6 55.2 L 54.2 57.7 L 55.0 59.0 L 61.0 65.9 L 61.4 66.1 L 63.6 66.0 L 72.6 65.0 L 81.1 64.5 L 88.7 63.8"
+    }
+  ],
+  "blog": [
+    {
+      "title": "First",
+      "date": "8/12/24",
+      "content": "Wowie, got it redesigned. Still dog water but its fun. Who needs 3rd-party sites to track what I do."
+    }
+  ],
+  "books": [],
+  "dev": []
+}
