@@ -167,6 +167,8 @@ footer a:hover {
 .hidden-content.show p {
   opacity: 1;
   transform: translateY(0);
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Star rating styles */
