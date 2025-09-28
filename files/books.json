@@ -1,0 +1,47 @@
+[
+     {
+          "title": "Washington: A Life",
+          "author": "Ron Chernow", 
+          "rating": "★★★★★"
+     },
+     {
+          "title": "Red Rising Trilogy",
+          "author": "Pierce Brown", 
+          "rating": "★★★★"
+     },
+     {
+          "title": "Dune",
+          "author": "Frank Herbert", 
+          "rating": "★★★★"
+     },
+     {
+          "title": "Dune Messiah",
+          "author": "Frank Herbert", 
+          "rating": "★★★★"
+     },
+     {
+          "title": "Children of Dune",
+          "author": "Frank Herbert", 
+          "rating": "★★★★"
+     },
+     {
+          "title": "Birdwing",
+          "author": "Rafe Martin", 
+          "rating": "★★★★"
+     },
+     {
+          "title": "The Expanse Trilogy",
+          "author": "James S.A. Corey", 
+          "rating": "★★★★"
+     },
+     {
+          "title": "The Martian",
+          "author": "Andy Weir", 
+          "rating": "★★★★"
+     },
+     {
+          "title": "Artemis",
+          "author": "Andy Weir", 
+          "rating": "★★★★"
+     }
+]
