@@ -9,15 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
     loadPhotos();
     loadAbout();
     
-    // Show about content by default
-    // const aboutContent = document.getElementById('about-content');
-    // if (aboutContent) {
-    //     aboutContent.classList.add('show');
-    // }
     navButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const targetId = this.getAttribute('data-target');
-            const targetContent = document.getElementById(targetId);
+            const targetClass = this.getAttribute('data-target');
+            const targetContent = document.querySelector('.' + targetClass);
             
             // Hide all other content sections
             hiddenContents.forEach(content => {
@@ -75,7 +70,7 @@ async function loadMovies() {
         const response = await fetch('./files/movies.json');
         const movies = await response.json();
         
-        const moviesContent = document.getElementById('movies-content');
+        const moviesContent = document.querySelector('.movies-content');
         if (!moviesContent) return;
         
         // Don't clear content - keep existing content
@@ -105,7 +100,7 @@ async function loadMovies() {
         
     } catch (error) {
         console.error('Error loading movies:', error);
-        const moviesContent = document.getElementById('movies-content');
+        const moviesContent = document.querySelector('.movies-content');
         if (moviesContent) {
             moviesContent.innerHTML = '<p>Error loading movies. Please try again later.</p>';
         }
@@ -118,7 +113,7 @@ async function loadBooks() {
         const response = await fetch('./files/books.json');
         const books = await response.json();
         
-        const booksContent = document.getElementById('books-content');
+        const booksContent = document.querySelector('.books-content');
         if (!booksContent) return;
         
         // Don't clear content - keep existing content
@@ -156,7 +151,7 @@ async function loadBooks() {
         
     } catch (error) {
         console.error('Error loading books:', error);
-        const booksContent = document.getElementById('books-content');
+        const booksContent = document.querySelector('.books-content');
         if (booksContent) {
             booksContent.innerHTML = '<p>Error loading books. Please try again later.</p>';
         }
@@ -168,7 +163,7 @@ async function loadPhotos() {
         const response = await fetch('./files/photos.json');
         const photos = await response.json();
 
-        const photosContent = document.getElementById('photos-content');
+        const photosContent = document.querySelector('.photos-content');
         if (!photosContent) return;
 
         const photosContainer = document.createElement('div');
@@ -228,7 +223,7 @@ async function loadPhotos() {
         
     } catch (error) {
         console.error('Error loading photos:', error);
-        const photosContent = document.getElementById('photos-content');
+        const photosContent = document.querySelector('.photos-content');
         if (photosContent) {
             photosContent.innerHTML = '<p>Error loading photos. Please try again later.</p>';
         }
@@ -240,7 +235,7 @@ async function loadAbout() {
         const response = await fetch('./files/about.json');
         const about = await response.json();
 
-        const aboutContent = document.getElementById('about-content');
+        const aboutContent = document.querySelector('.about-content');
         if (!aboutContent) return;
 
         const aboutContainer = document.createElement('div');
@@ -264,7 +259,7 @@ async function loadAbout() {
 
     } catch (error) {
         console.error('Error loading about:', error);
-        const aboutContent = document.getElementById('about-content');
+        const aboutContent = document.querySelector('.about-content');
         if (aboutContent) {
             aboutContent.innerHTML = '<p>Error loading about. Please try again later.</p>';
         }
