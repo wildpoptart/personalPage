@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadBooks();
     loadPhotos();
     loadAbout();
+    loadThoughts();
     
     navButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -238,30 +239,137 @@ async function loadAbout() {
         const aboutContent = document.querySelector('.about-content');
         if (!aboutContent) return;
 
-        const aboutContainer = document.createElement('div');
-        aboutContainer.className = 'about-container';
+        // Load the first (and only) about content
+        if (about.length > 0) {
+            loadAboutContent(about[0].file, aboutContent);
+        }
         
-        about.forEach(about => {
-            const aboutElement = document.createElement('div');
-            aboutElement.className = 'about-item';
-
-            let aboutHtml = ``;
-            for (const key in about) {
-                if (key !== 'title') {
-                    aboutHtml += `<p class="about-p">${about[key]}</p>`;
-                }
-            }
-            aboutElement.innerHTML = aboutHtml;
-            aboutContainer.appendChild(aboutElement);
-        });
-
-        aboutContent.appendChild(aboutContainer);
-
     } catch (error) {
         console.error('Error loading about:', error);
         const aboutContent = document.querySelector('.about-content');
         if (aboutContent) {
             aboutContent.innerHTML = '<p>Error loading about. Please try again later.</p>';
         }
+    }
+}
+
+async function loadAboutContent(fileName, contentArea) {
+    try {
+        const response = await fetch(`./about/${fileName}`);
+        const markdownContent = await response.text();
+        
+        const htmlContent = parseMarkdown(markdownContent);
+        
+        contentArea.innerHTML = htmlContent;
+        
+    } catch (error) {
+        console.error('Error loading about content:', error);
+        contentArea.innerHTML = '<p>Error loading about content. Please try again later.</p>';
+    }
+}
+
+// Simple markdown parser for basic formatting
+function parseMarkdown(markdown) {
+    return markdown
+        // Headers
+        .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+        .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+        .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+        // Bold
+        .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+        // Italic
+        .replace(/\*(.*)\*/gim, '<em>$1</em>')
+        // Lists
+        .replace(/^\* (.*$)/gim, '<li>$1</li>')
+        .replace(/^- (.*$)/gim, '<li>$1</li>')
+        // Wrap consecutive list items in ul
+        .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
+        // Clean up nested ul tags
+        .replace(/<\/ul>\s*<ul>/g, '')
+        // Code blocks
+        .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+        // Inline code
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        // Blockquotes
+        .replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>')
+        // Line breaks
+        .replace(/\n\n/g, '</p><p>')
+        // Wrap in paragraphs
+        .replace(/^(?!<[h|u|b|p|d|c|s])(.*$)/gim, '<p>$1</p>')
+        // Clean up empty paragraphs
+        .replace(/<p><\/p>/g, '')
+        // Clean up paragraphs inside other elements
+        .replace(/<p>(<h[1-6]>.*<\/h[1-6]>)<\/p>/g, '$1')
+        .replace(/<p>(<ul>.*<\/ul>)<\/p>/g, '$1')
+        .replace(/<p>(<blockquote>.*<\/blockquote>)<\/p>/g, '$1')
+        .replace(/<p>(<pre>.*<\/pre>)<\/p>/g, '$1');
+}
+
+async function loadThoughts() {
+    try {
+        const response = await fetch('./files/thoughts.json');
+        const thoughts = await response.json();
+
+        const thoughtsContent = document.querySelector('.thoughts-content');
+        const thoughtsNavDropdownContainer = document.querySelector('.thoughts-nav-dropdown-container');
+        const thoughtsContentArea = document.querySelector('.thoughts-content-area');
+        
+        if (!thoughtsContent || !thoughtsNavDropdownContainer || !thoughtsContentArea) return;
+
+        // Clear existing content
+        thoughtsNavDropdownContainer.innerHTML = '';
+        thoughtsContentArea.innerHTML = '';
+
+        // Create dropdown
+        const dropdown = document.createElement('select');
+        dropdown.className = 'thoughts-nav-dropdown';
+        
+        // Create options for dropdown
+        thoughts.forEach((thought, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+            option.textContent = thought.title;
+            dropdown.appendChild(option);
+        });
+        
+        // Add dropdown to container
+        thoughtsNavDropdownContainer.appendChild(dropdown);
+        
+        // Add change event listener for dropdown
+        dropdown.addEventListener('change', () => {
+            const selectedIndex = parseInt(dropdown.value);
+            const selectedThought = thoughts[selectedIndex];
+            
+            // Load the selected thought
+            loadThoughtContent(selectedThought.file, thoughtsContentArea);
+        });
+
+        // Load the first thought by default
+        if (thoughts.length > 0) {
+            dropdown.selectedIndex = 0;
+            loadThoughtContent(thoughts[0].file, thoughtsContentArea);
+        }
+        
+    } catch (error) {
+        console.error('Error loading thoughts:', error);
+        const thoughtsContent = document.querySelector('.thoughts-content');
+        if (thoughtsContent) {
+            thoughtsContent.innerHTML = '<p>Error loading thoughts. Please try again later.</p>';
+        }
+    }
+}
+
+async function loadThoughtContent(fileName, contentArea) {
+    try {
+        const response = await fetch(`./thoughts/${fileName}`);
+        const markdownContent = await response.text();
+        
+        const htmlContent = parseMarkdown(markdownContent);
+        
+        contentArea.innerHTML = `<div class="thought-content">${htmlContent}</div>`;
+        
+    } catch (error) {
+        console.error('Error loading thought content:', error);
+        contentArea.innerHTML = '<p>Error loading thought content. Please try again later.</p>';
     }
 }
