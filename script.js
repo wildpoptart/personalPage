@@ -85,13 +85,22 @@ async function loadMovies() {
             const movieElement = document.createElement('div');
             movieElement.className = 'movie-item';
             
+            const thumbnailHTML = movie.thumbnail ? 
+                `<img src="${movie.thumbnail}" alt="${movie.title}" class="movie-thumbnail" onerror="this.style.display='none'">` : 
+                '';
+            
             movieElement.innerHTML = `
-                <p class="movie-title">${movie.title} 
-                    <span class="star-rating">
-                        ${convertRatingToStars(movie.rating)}
-                    </span>
-                </p>
-                ${movie.review ? `<p class="movie-review">${movie.review}</p>` : ''}
+                <div class="movie-content">
+                    ${thumbnailHTML}
+                    <div class="movie-text">
+                        <p class="movie-title">${movie.title} 
+                            <span class="star-rating">
+                                ${convertRatingToStars(movie.rating)}
+                            </span>
+                        </p>
+                        ${movie.review ? `<p class="movie-review">${movie.review}</p>` : ''}
+                    </div>
+                </div>
             `;
             
             moviesContainer.appendChild(movieElement);
@@ -135,14 +144,23 @@ async function loadBooks() {
             const bookElement = document.createElement('div');
             bookElement.className = 'book-item';
             
+            const thumbnailHTML = book.thumbnail ? 
+                `<img src="${book.thumbnail}" alt="${book.title || 'Untitled Book'}" class="book-thumbnail" onerror="this.style.display='none'">` : 
+                '';
+            
             bookElement.innerHTML = `
-                <p class="book-title">${book.title || 'Untitled Book'} 
-                    <span class="star-rating">
-                        ${convertRatingToStars(book.rating)}
-                    </span>
-                </p>
-                ${book.author ? `<p class="book-author">by ${book.author}</p>` : ''}
-                ${book.review ? `<p class="book-review">${book.review}</p>` : ''}
+                <div class="book-content">
+                    ${thumbnailHTML}
+                    <div class="book-text">
+                        <p class="book-title">${book.title || 'Untitled Book'} 
+                            <span class="star-rating">
+                                ${convertRatingToStars(book.rating)}
+                            </span>
+                        </p>
+                        ${book.author ? `<p class="book-author">by ${book.author}</p>` : ''}
+                        ${book.review ? `<p class="book-review">${book.review}</p>` : ''}
+                    </div>
+                </div>
             `;
             
             booksContainer.appendChild(bookElement);

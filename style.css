@@ -231,6 +231,25 @@ footer a:hover {
   border-radius: 6px;
 }
 
+.movie-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.movie-thumbnail {
+  width: 60px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.movie-text {
+  flex: 1;
+  min-width: 0;
+}
+
 .movie-title {
   margin: 0 0 5px 0;
   font-weight: bold;
@@ -315,6 +334,25 @@ footer a:hover {
   padding: 10px;
   background-color: rgba(18, 18, 18, 0.3);
   border-radius: 6px;
+}
+
+.book-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.book-thumbnail {
+  width: 60px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.book-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .book-title {
