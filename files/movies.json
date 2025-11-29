@@ -12,7 +12,7 @@
         "thumbnail": "./img/movies/The_Amateur.webp"
     },
     {
-        "title": "Demolition (2016)",
+        "title": "Demolition (2015)",
         "rating": "★★★★",
         "review": "",
         "thumbnail": "./img/movies/Demolition.webp"
@@ -24,10 +24,10 @@
         "thumbnail": "./img/movies/The_Rock.webp"
     },
     {
-        "title": "Mollys Game (2017)",
+        "title": "Molly's Game (2017)",
         "rating": "★★★½",
         "review": "",
-        "thumbnail": ""
+        "thumbnail": "./img/movies/Molly's_Game.webp"
     },
     {
         "title": "Love & Other Drugs (2010)",
