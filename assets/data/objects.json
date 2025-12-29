@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Cube",
+        "type": "box",
+        "color": "#d37836"
+    },
+    {
+        "title": "Sphere",
+        "type": "sphere",
+        "color": "#d37836",
+        "rotationSpeed": 0.015
+    },
+    {
+        "title": "Torus",
+        "type": "torus",
+        "color": "#d37836",
+        "rotationAxis": "all"
+    },
+    {
+        "title": "Octahedron",
+        "type": "octahedron",
+        "color": "#d37836",
+        "rotationSpeed": 0.02
+    }
+]
+

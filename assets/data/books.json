@@ -3,13 +3,13 @@
         "title": "Washington: A Life",
         "author": "Ron Chernow",
         "rating": "★★★★★",
-        "thumbnail": "./img/books/Washington_A_Life.webp"
+        "thumbnail": "./assets/static/img/books/Washington_A_Life.webp"
     },
     {
         "title": "The Moon is a Harsh Mistress",
         "author": "Robert A. Heinlein",
         "rating": "★★★★★",
-        "thumbnail": "./img/books/The_Moon_is_a_Harsh_Mistress.webp"
+        "thumbnail": "./assets/static/img/books/The_Moon_is_a_Harsh_Mistress.webp"
     },
     {
         "title": "Red Rising Trilogy",
@@ -21,25 +21,25 @@
         "title": "Dune",
         "author": "Frank Herbert",
         "rating": "★★★★",
-        "thumbnail": "./img/books/Dune.webp"
+        "thumbnail": "./assets/static/img/books/Dune.webp"
     },
     {
         "title": "Dune Messiah",
         "author": "Frank Herbert",
         "rating": "★★★★",
-        "thumbnail": "./img/books/Dune_Messiah.webp"
+        "thumbnail": "./assets/static/img/books/Dune_Messiah.webp"
     },
     {
         "title": "Children of Dune",
         "author": "Frank Herbert",
         "rating": "★★★★",
-        "thumbnail": "./img/books/Children_of_Dune.webp"
+        "thumbnail": "./assets/static/img/books/Children_of_Dune.webp"
     },
     {
         "title": "Birdwing",
         "author": "Rafe Martin",
         "rating": "★★★★",
-        "thumbnail": "./img/books/Birdwing.webp"
+        "thumbnail": "./assets/static/img/books/Birdwing.webp"
     },
     {
         "title": "The Expanse Trilogy",
@@ -51,12 +51,12 @@
         "title": "The Martian",
         "author": "Andy Weir",
         "rating": "★★★★",
-        "thumbnail": "./img/books/The_Martian.webp"
+        "thumbnail": "./assets/static/img/books/The_Martian.webp"
     },
     {
         "title": "Artemis",
         "author": "Andy Weir",
         "rating": "★★★★",
-        "thumbnail": "./img/books/Artemis.webp"
+        "thumbnail": "./assets/static/img/books/Artemis.webp"
     }
 ]

@@ -23,10 +23,11 @@ except ImportError:
 
 # Configuration
 BASE_DIR = Path(__file__).parent
-BOOKS_JSON = BASE_DIR / "files" / "books.json"
-MOVIES_JSON = BASE_DIR / "files" / "movies.json"
-BOOKS_IMG_DIR = BASE_DIR / "img" / "books"
-MOVIES_IMG_DIR = BASE_DIR / "img" / "movies"
+print(BASE_DIR)
+BOOKS_JSON = BASE_DIR / ".." / "data" / "books.json"
+MOVIES_JSON = BASE_DIR / ".." / "data" / "movies.json"
+BOOKS_IMG_DIR = BASE_DIR / ".." / "static" / "img" / "books"
+MOVIES_IMG_DIR = BASE_DIR / ".." /  "static" / "img" / "movies"
 
 # API Configuration
 # For OMDb API, get a free API key from http://www.omdbapi.com/apikey.aspx
