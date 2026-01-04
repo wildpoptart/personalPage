@@ -1,5 +1,20 @@
 [
   {
+    "title": "Avatar",
+    "rating": 4.5,
+    "thumbnail": "./img/movies/avatar.webp"
+  },
+  {
+    "title": "Avatar: The Way of Water",
+    "rating": 4,
+    "thumbnail": "./img/movies/avatar_the_way_of_water.webp"
+  },
+  {
+    "title": "Avatar: Fire and Ash",
+    "rating": 3.5,
+    "thumbnail": "./img/movies/avatar_fire_and_ash.webp"
+  },
+  {
     "title": "Face/Off",
     "rating": 3,
     "thumbnail": "./img/movies/face_off.webp"
@@ -334,10 +349,10 @@
     "thumbnail": "./assets/static/img/movies/The_Big_Short.webp"
   },
   {
-    "title": "The Hunger Games: Mockingjay â Part 2 (2015)",
+    "title": "The Hunger Games: Mockingjay Ã¢ÂÂ Part 2 (2015)",
     "rating": 3,
     "review": "",
-    "thumbnail": "./assets/static/img/movies/The_Hunger_Games_Mockingjay_â_Part_2.webp"
+    "thumbnail": "./assets/static/img/movies/The_Hunger_Games_Mockingjay_Ã¢ÂÂ_Part_2.webp"
   },
   {
     "title": "Spectre (2015)",
@@ -382,10 +397,10 @@
     "thumbnail": "./assets/static/img/movies/Kingsman_The_Secret_Service.webp"
   },
   {
-    "title": "The Hunger Games: Mockingjay â Part 1 (2014)",
+    "title": "The Hunger Games: Mockingjay Ã¢ÂÂ Part 1 (2014)",
     "rating": 3,
     "review": "",
-    "thumbnail": "./assets/static/img/movies/The_Hunger_Games_Mockingjay_â_Part_1.webp"
+    "thumbnail": "./assets/static/img/movies/The_Hunger_Games_Mockingjay_Ã¢ÂÂ_Part_1.webp"
   },
   {
     "title": "Interstellar (2014)",
