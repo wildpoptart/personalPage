@@ -5,6 +5,7 @@ import movies from "../assets/data/movies.json" with { type: "json" };
 import books from "../assets/data/books.json" with {type: "json"};
 import photos from "../assets/data/photos.json" with {type: "json"};
 import about from "../assets/data/about.json" with {type: "json"};
+import mds from "../assets/data/mds.json" with {type: "json"};
 
 AddStyle(`
     .info-content{
@@ -269,6 +270,135 @@ AddStyle(`
     .about-content em {
         color: rgb(211, 120, 54);
     }
+
+    /* Thoughts content styles */
+    .thoughts-container {
+        max-height: 100%;
+        height: auto;
+        overflow-y: auto;
+        padding: 10px 0;
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+    }
+
+    .thoughts-container.showing {
+        width: 100%;
+        border: 1px gray solid;
+    }
+
+    .thoughts-dropdown-wrapper {
+        padding: 15px 20px;
+        background-color: rgba(18, 18, 18, 0.5);
+        border-bottom: 1px solid rgba(211, 120, 54, 0.3);
+    }
+
+    .thoughts-dropdown {
+        width: 100%;
+        padding: 10px 15px;
+        background-color: rgba(30, 30, 30, 0.9);
+        color: #e0e0e0;
+        border: 1px solid rgb(211, 120, 54);
+        border-radius: 6px;
+        font-size: 1em;
+        cursor: pointer;
+        outline: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d37836' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+    }
+
+    .thoughts-dropdown:hover {
+        border-color: #e0e0e0;
+    }
+
+    .thoughts-dropdown:focus {
+        border-color: #e0e0e0;
+        box-shadow: 0 0 0 2px rgba(211, 120, 54, 0.2);
+    }
+
+    .thoughts-dropdown option {
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+        padding: 10px;
+    }
+
+    .thoughts-content-area {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        background-color: rgba(18, 18, 18, 0.3);
+        line-height: 1.6;
+        color: var(--text-color);
+    }
+
+    .thoughts-content-area::-webkit-scrollbar {
+        display: none;
+    }
+
+    .thoughts-content-area h1,
+    .thoughts-content-area h2,
+    .thoughts-content-area h3,
+    .thoughts-content-area h4,
+    .thoughts-content-area h5,
+    .thoughts-content-area h6 {
+        color: #e0e0e0;
+        margin-top: 0;
+    }
+
+    .thoughts-content-area h1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgb(211, 120, 54);
+        padding-bottom: 10px;
+    }
+
+    .thoughts-content-area h2 {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+        margin-top: 25px;
+    }
+
+    .thoughts-content-area p {
+        margin-bottom: 15px;
+    }
+
+    .thoughts-content-area ul,
+    .thoughts-content-area ol {
+        margin-bottom: 15px;
+        padding-left: 25px;
+    }
+
+    .thoughts-content-area li {
+        margin-bottom: 5px;
+    }
+
+    .thoughts-content-area blockquote {
+        border-left: 3px solid rgb(211, 120, 54);
+        padding-left: 15px;
+        margin: 15px 0;
+        font-style: italic;
+        color: #bbb;
+    }
+
+    .thoughts-content-area code {
+        background-color: rgba(18, 18, 18, 0.6);
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: 'Courier New', monospace;
+        color: rgb(211, 120, 54);
+    }
+
+    .thoughts-content-area strong {
+        color: #e0e0e0;
+    }
+
+    .thoughts-content-area em {
+        color: rgb(211, 120, 54);
+    }
 `);
 
 export default class InfoContent extends HTMLElement{
@@ -290,6 +420,7 @@ export default class InfoContent extends HTMLElement{
         if(page === 'movies'){ this.loadMovies(); }
         if(page === 'books'){ this.loadBooks(); }
         if(page === 'photos'){ this.loadPhotos(); }
+        if(page === 'thoughts'){ this.loadThoughts(); }
     };
 
     hide(){
@@ -465,71 +596,64 @@ export default class InfoContent extends HTMLElement{
     };
 
     async loadThoughts() {
-        try {
-            const response = await fetch('./files/thoughts.json');
-            const thoughts = await response.json();
-    
-            const thoughtsContent = document.querySelector('.thoughts-content');
-            const thoughtsNavDropdownContainer = document.querySelector('.thoughts-nav-dropdown-container');
-            const thoughtsContentArea = document.querySelector('.thoughts-content-area');
-            
-            if (!thoughtsContent || !thoughtsNavDropdownContainer || !thoughtsContentArea) return;
-    
-            // Clear existing content
-            thoughtsNavDropdownContainer.innerHTML = '';
-            thoughtsContentArea.innerHTML = '';
-    
-            // Create dropdown
-            const dropdown = document.createElement('select');
-            dropdown.className = 'thoughts-nav-dropdown';
-            
-            // Create options for dropdown
-            thoughts.forEach((thought, index) => {
-                const option = document.createElement('option');
-                option.value = index;
-                option.textContent = thought.title;
-                dropdown.appendChild(option);
-            });
-            
-            // Add dropdown to container
-            thoughtsNavDropdownContainer.appendChild(dropdown);
-            
-            // Add change event listener for dropdown
-            dropdown.addEventListener('change', () => {
-                const selectedIndex = parseInt(dropdown.value);
-                const selectedThought = thoughts[selectedIndex];
-                
-                // Load the selected thought
-                loadThoughtContent(selectedThought.file, thoughtsContentArea);
-            });
-    
-            // Load the first thought by default
-            if (thoughts.length > 0) {
-                dropdown.selectedIndex = 0;
-                loadThoughtContent(thoughts[0].file, thoughtsContentArea);
+        const infoContent = this;
+        if(this.showing === 'thoughts') { this.hide(); return; }
+
+        this.showing = 'thoughts';
+
+        // Create main container
+        const thoughtsContainer = document.createElement('div');
+        thoughtsContainer.className = 'thoughts-container';
+        thoughtsContainer.classList.add('showing');
+
+        // Create dropdown wrapper
+        const dropdownWrapper = document.createElement('div');
+        dropdownWrapper.className = 'thoughts-dropdown-wrapper';
+
+        // Create dropdown
+        const dropdown = document.createElement('select');
+        dropdown.className = 'thoughts-dropdown';
+
+        // Populate dropdown with options from mds.json
+        mds.forEach((item, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+            option.textContent = item.title;
+            dropdown.appendChild(option);
+        });
+
+        dropdownWrapper.appendChild(dropdown);
+
+        // Create content area
+        const contentArea = document.createElement('div');
+        contentArea.className = 'thoughts-content-area';
+
+        thoughtsContainer.appendChild(dropdownWrapper);
+        thoughtsContainer.appendChild(contentArea);
+        infoContent.appendChild(thoughtsContainer);
+
+        // Load content helper function
+        const loadContent = async (fileName) => {
+            try {
+                const response = await fetch(`./assets/data/mds/${fileName}`);
+                const markdownContent = await response.text();
+                const htmlContent = parseMarkdown(markdownContent);
+                contentArea.innerHTML = htmlContent;
+            } catch (error) {
+                console.error('Error loading thought content:', error);
+                contentArea.innerHTML = '<p>Error loading content. Please try again later.</p>';
             }
-            
-        } catch (error) {
-            console.error('Error loading thoughts:', error);
-            const thoughtsContent = document.querySelector('.thoughts-content');
-            if (thoughtsContent) {
-                thoughtsContent.innerHTML = '<p>Error loading thoughts. Please try again later.</p>';
-            }
-        }
-    };
-    
-    async loadThoughtContent(fileName, contentArea) {
-        try {
-            const response = await fetch(`./thoughts/${fileName}`);
-            const markdownContent = await response.text();
-            
-            const htmlContent = parseMarkdown(markdownContent);
-            
-            contentArea.innerHTML = `<div class="thought-content">${htmlContent}</div>`;
-            
-        } catch (error) {
-            console.error('Error loading thought content:', error);
-            contentArea.innerHTML = '<p>Error loading thought content. Please try again later.</p>';
+        };
+
+        // Add change event listener
+        dropdown.addEventListener('change', () => {
+            const selectedIndex = parseInt(dropdown.value);
+            loadContent(mds[selectedIndex].file);
+        });
+
+        // Load the first item by default
+        if (mds.length > 0) {
+            loadContent(mds[0].file);
         }
     };
 }

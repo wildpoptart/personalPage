@@ -2,5 +2,9 @@
      {
           "title": "The Moon",
           "file": "moon.md"
+     },
+     {
+          "title": "Goals",
+          "file": "goals.md"
      }
 ]

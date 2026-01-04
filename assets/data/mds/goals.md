@@ -1,0 +1,12 @@
+- Learn more Russian Vocab
+- Learn to handstand
+- Learn CAD
+- Make Custom Keyboard
+- Learn some chess
+- Sub 1 min Rubix cube solve
+- Run Marathon
+- Design Custom Mouse
+- Design Custom fight stick
+- Learn to fly quadcopter
+- Bike 30 miles
+- 
