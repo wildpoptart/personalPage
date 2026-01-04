@@ -35,31 +35,31 @@ export function parseMarkdown(markdown) {
         .replace(/<p>(<pre>.*<\/pre>)<\/p>/g, '$1');
 };
 
-// Function to convert star rating to HTML
+// Function to convert numeric rating to star HTML
 export function convertRatingToStars(rating) {
-    // Handle undefined, null, or empty rating
-    if (!rating || typeof rating !== 'string') {
+    // Handle undefined, null, or invalid rating
+    if (rating === undefined || rating === null || typeof rating !== 'number') {
         // Return 5 empty stars if no rating
         return '<span class="star empty">★</span>'.repeat(5);
     }
     
-    const starCount = (rating.match(/★/g) || []).length;
-    const halfStar = rating.includes('½');
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
     
     let starsHTML = '';
     
     // Add full stars
-    for (let i = 0; i < starCount; i++) {
+    for (let i = 0; i < fullStars; i++) {
         starsHTML += '<span class="star">★</span>';
     }
     
     // Add half star if present
-    if (halfStar) {
+    if (hasHalfStar) {
         starsHTML += '<span class="star half">★</span>';
     }
     
     // Add empty stars to make it 5 total
-    const totalStars = starCount + (halfStar ? 1 : 0);
+    const totalStars = fullStars + (hasHalfStar ? 1 : 0);
     const emptyStars = 5 - totalStars;
     for (let i = 0; i < emptyStars; i++) {
         starsHTML += '<span class="star empty">★</span>';

@@ -2,61 +2,61 @@
     {
         "title": "Washington: A Life",
         "author": "Ron Chernow",
-        "rating": "★★★★★",
+        "rating": 5,
         "thumbnail": "./assets/static/img/books/Washington_A_Life.webp"
     },
     {
         "title": "The Moon is a Harsh Mistress",
         "author": "Robert A. Heinlein",
-        "rating": "★★★★★",
+        "rating": 5,
         "thumbnail": "./assets/static/img/books/The_Moon_is_a_Harsh_Mistress.webp"
     },
     {
         "title": "Red Rising Trilogy",
         "author": "Pierce Brown",
-        "rating": "★★★★",
+        "rating": 4,
         "thumbnail": ""
     },
     {
         "title": "Dune",
         "author": "Frank Herbert",
-        "rating": "★★★★",
+        "rating": 4,
         "thumbnail": "./assets/static/img/books/Dune.webp"
     },
     {
         "title": "Dune Messiah",
         "author": "Frank Herbert",
-        "rating": "★★★★",
+        "rating": 4,
         "thumbnail": "./assets/static/img/books/Dune_Messiah.webp"
     },
     {
         "title": "Children of Dune",
         "author": "Frank Herbert",
-        "rating": "★★★★",
+        "rating": 4,
         "thumbnail": "./assets/static/img/books/Children_of_Dune.webp"
     },
     {
         "title": "Birdwing",
         "author": "Rafe Martin",
-        "rating": "★★★★",
+        "rating": 4,
         "thumbnail": "./assets/static/img/books/Birdwing.webp"
     },
     {
         "title": "The Expanse Trilogy",
         "author": "James S.A. Corey",
-        "rating": "★★★★",
+        "rating": 4,
         "thumbnail": ""
     },
     {
         "title": "The Martian",
         "author": "Andy Weir",
-        "rating": "★★★★",
+        "rating": 4,
         "thumbnail": "./assets/static/img/books/The_Martian.webp"
     },
     {
         "title": "Artemis",
         "author": "Andy Weir",
-        "rating": "★★★★",
+        "rating": 4,
         "thumbnail": "./assets/static/img/books/Artemis.webp"
     }
 ]
