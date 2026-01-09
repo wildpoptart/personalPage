@@ -7,7 +7,7 @@ import photos from "../assets/data/photos.json" with {type: "json"};
 import about from "../assets/data/about.json" with {type: "json"};
 import mds from "../assets/data/mds.json" with {type: "json"};
 
-AddStyle(`
+AddStyle(/*css*/`
     .info-content{
         display: flex;
         height: calc(100vh - 200px);
@@ -495,7 +495,7 @@ export default class InfoContent extends HTMLElement{
                 `<img src="${book.thumbnail}" alt="${book.title || 'Untitled Book'}" class="book-thumbnail" onerror="this.style.display='none'">` : 
                 '';
             
-            bookElement.innerHTML = `
+            bookElement.innerHTML = /*html*/`
                 <div class="book-content">
                     ${thumbnailHTML}
                     <div class="book-text">

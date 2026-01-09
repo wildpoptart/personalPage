@@ -4,7 +4,7 @@ document.querySelector('head').appendChild(styleNode);
 const AddStyle = styleNode.styleSheet ? style => styleNode.styleSheet.cssText += style : style => styleNode.appendChild(document.createTextNode(style));
 export default AddStyle;
 
-AddStyle(`
+AddStyle(/*css*/`
     /* global styles */
     
     :root{
