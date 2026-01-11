@@ -2,32 +2,32 @@
   {
     "title": "Marty Supreme",
     "rating": 3.5,
-    "thumbnail": "./img/movies/marty_supreme.webp"
+    "thumbnail": "./assets/static/img/movies/marty_supreme.webp"
   },
   {
     "title": "Avatar",
     "rating": 4.5,
-    "thumbnail": "./img/movies/avatar.webp"
+    "thumbnail": "./assets/static/img/movies/avatar.webp"
   },
   {
     "title": "Avatar: The Way of Water",
     "rating": 4,
-    "thumbnail": "./img/movies/avatar_the_way_of_water.webp"
+    "thumbnail": "./assets/static/img/movies/avatar_the_way_of_water.webp"
   },
   {
     "title": "Avatar: Fire and Ash",
     "rating": 3.5,
-    "thumbnail": "./img/movies/avatar_fire_and_ash.webp"
+    "thumbnail": "./assets/static/img/movies/avatar_fire_and_ash.webp"
   },
   {
     "title": "Face/Off",
     "rating": 3,
-    "thumbnail": "./img/movies/face_off.webp"
+    "thumbnail": "./assets/static/img/movies/face_off.webp"
   },
   {
     "title": "Lost in Translation",
     "rating": 3.5,
-    "thumbnail": "./img/movies/lost_in_translation.webp"
+    "thumbnail": "./assets/static/img/movies/lost_in_translation.webp"
   },
   {
     "title": "The Count of Monte Cristo (2002)",
@@ -354,10 +354,10 @@
     "thumbnail": "./assets/static/img/movies/The_Big_Short.webp"
   },
   {
-    "title": "The Hunger Games: Mockingjay ÃÂ¢ÃÂÃÂ Part 2 (2015)",
+    "title": "The Hunger Games: Mockingjay Part 2 (2015)",
     "rating": 3,
     "review": "",
-    "thumbnail": "./assets/static/img/movies/The_Hunger_Games_Mockingjay_ÃÂ¢ÃÂÃÂ_Part_2.webp"
+    "thumbnail": "./assets/static/img/movies/The_Hunger_Games_Mockingjay_–_Part_2.webp"
   },
   {
     "title": "Spectre (2015)",
@@ -402,10 +402,10 @@
     "thumbnail": "./assets/static/img/movies/Kingsman_The_Secret_Service.webp"
   },
   {
-    "title": "The Hunger Games: Mockingjay ÃÂ¢ÃÂÃÂ Part 1 (2014)",
+    "title": "The Hunger Games: Mockingjay Part 1 (2014)",
     "rating": 3,
     "review": "",
-    "thumbnail": "./assets/static/img/movies/The_Hunger_Games_Mockingjay_ÃÂ¢ÃÂÃÂ_Part_1.webp"
+    "thumbnail": "./assets/static/img/movies/The_Hunger_Games_Mockingjay_–_Part_1.webp"
   },
   {
     "title": "Interstellar (2014)",
@@ -585,7 +585,7 @@
     "title": "Fast and Furious Tokyo Drift",
     "rating": 4,
     "review": "",
-    "thumbnail": ""
+    "thumbnail": "./assets/static/img/movies/Fast_and_Furious_Tokyo_Drift.webp"
   },
   {
     "title": "Pride and Prejudice (2005)",
@@ -831,7 +831,7 @@
     "title": "Tron (1982)",
     "rating": 3.5,
     "review": "",
-    "thumbnail": "./img/movies/Tron.webp"
+    "thumbnail": "./assets/static/img/movies/Tron.webp"
   },
   {
     "title": "Blade Runner (1982)",

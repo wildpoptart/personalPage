@@ -157,7 +157,6 @@ AddStyle(/*css*/`
     .photo-item {
         border-radius: 8px;
         overflow: hidden;
-        cursor: pointer;
         transition: transform 0.3s ease;
     }
 
