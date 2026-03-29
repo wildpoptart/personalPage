@@ -1,5 +1,50 @@
 [
     {
+        "title": "Project Hail Mary",
+        "rating": 5,
+        "thumbnail": "./img/movies/Project_Hail_Mary.webp"
+    },
+    {
+        "title": "War Machine (2026)",
+        "rating": 3,
+        "thumbnail": "./img/movies/War_Machine.webp"
+    },
+    {
+        "title": "Dune (1984)",
+        "rating": 3,
+        "thumbnail": "./img/movies/Dune.webp"
+    },
+    {
+        "title": "The Man from U.N.C.L.E. (2015)",
+        "rating": 3,
+        "thumbnail": "./img/movies/The_Man_from_U.N.C.L.E..webp"
+    },
+    {
+        "title": "Underworld (2003)",
+        "rating": 3.5,
+        "thumbnail": "./img/movies/Underworld.webp"
+    },
+    {
+        "title": "The Shape of Things (2003)",
+        "rating": 4,
+        "thumbnail": "./img/movies/The_Shape_of_Things.webp"
+    },
+    {
+        "title": "Chain Reaction (1996)",
+        "rating": 2,
+        "thumbnail": "./img/movies/Chain_Reaction.webp"
+    },
+    {
+        "title": "Gattaca (1997)",
+        "rating": 5,
+        "thumbnail": "./img/movies/Gattaca.webp"
+    },
+    {
+        "title": "Anna (2019)",
+        "rating": 3.5,
+        "thumbnail": "./img/movies/Anna.webp"
+    },
+    {
         "title": "Marty Supreme",
         "rating": 3.5,
         "thumbnail": "./assets/static/img/movies/marty_supreme.webp"
