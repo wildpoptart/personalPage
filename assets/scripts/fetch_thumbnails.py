@@ -5,6 +5,7 @@ Downloads images and converts them to WebP format.
 Updates JSON files with thumbnail paths.
 """
 
+import argparse
 import json
 import os
 import re
@@ -13,7 +14,7 @@ import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
-from typing import Optional, Tuple
+from typing import Optional
 
 try:
     from PIL import Image
@@ -22,12 +23,14 @@ except ImportError:
     sys.exit(1)
 
 # Configuration
-BASE_DIR = Path(__file__).parent
-print(BASE_DIR)
-BOOKS_JSON = BASE_DIR / ".." / "data" / "books.json"
-MOVIES_JSON = BASE_DIR / ".." / "data" / "movies.json"
-BOOKS_IMG_DIR = BASE_DIR / ".." / "static" / "img" / "books"
-MOVIES_IMG_DIR = BASE_DIR / ".." /  "static" / "img" / "movies"
+BASE_DIR = Path(__file__).parent.resolve()
+ASSETS_DIR = BASE_DIR.parent
+STATIC_DIR = ASSETS_DIR / "static"
+REPO_ROOT = ASSETS_DIR.parent
+BOOKS_JSON = ASSETS_DIR / "data" / "books.json"
+MOVIES_JSON = ASSETS_DIR / "data" / "movies.json"
+BOOKS_IMG_DIR = STATIC_DIR / "img" / "books"
+MOVIES_IMG_DIR = STATIC_DIR / "img" / "movies"
 
 # API Configuration
 # For OMDb API, get a free API key from http://www.omdbapi.com/apikey.aspx
@@ -36,6 +39,27 @@ OMDB_API_KEY = os.environ.get("OMDB_API_KEY", "2fa27c2b")
 
 # Rate limiting (seconds between requests)
 REQUEST_DELAY = 0.5
+
+
+def resolved_thumbnail_path(thumbnail: str) -> Optional[Path]:
+    """Map JSON thumbnail string to an on-disk path under this repo."""
+    raw = (thumbnail or "").strip()
+    if not raw:
+        return None
+    while raw.startswith("./"):
+        raw = raw[2:]
+    raw = raw.lstrip("/")
+    if raw.startswith("img/"):
+        return (STATIC_DIR / raw).resolve()
+    if raw.startswith("assets/static/"):
+        return (REPO_ROOT / raw).resolve()
+    return (REPO_ROOT / raw).resolve()
+
+
+def has_thumbnail_on_disk(thumbnail: str) -> bool:
+    """True if thumbnail is set and the referenced file exists."""
+    path = resolved_thumbnail_path(thumbnail)
+    return path is not None and path.is_file()
 
 
 def sanitize_filename(title: str) -> str:
@@ -180,8 +204,7 @@ def process_books():
         author = book.get('author', '')
         current_thumbnail = book.get('thumbnail', '')
         
-        # Skip if thumbnail already exists
-        if current_thumbnail and os.path.exists(BASE_DIR / current_thumbnail.lstrip('./')):
+        if has_thumbnail_on_disk(current_thumbnail):
             print(f"[{i+1}/{len(books)}] Skipping '{title}' (thumbnail exists)")
             continue
         
@@ -216,8 +239,7 @@ def process_movies():
         title = movie.get('title', '')
         current_thumbnail = movie.get('thumbnail', '')
         
-        # Skip if thumbnail already exists
-        if current_thumbnail and os.path.exists(BASE_DIR / current_thumbnail.lstrip('./')):
+        if has_thumbnail_on_disk(current_thumbnail):
             print(f"[{i+1}/{len(movies)}] Skipping '{title}' (thumbnail exists)")
             continue
         
@@ -242,6 +264,16 @@ def process_movies():
 
 def main():
     """Main function."""
+    parser = argparse.ArgumentParser(
+        description="Fetch book/movie thumbnails; only items missing a thumbnail file are fetched."
+    )
+    parser.add_argument(
+        "--only",
+        choices=("books", "movies"),
+        help="Fetch only books or only movies (default: both).",
+    )
+    args = parser.parse_args()
+
     # Create directories if they don't exist
     BOOKS_IMG_DIR.mkdir(parents=True, exist_ok=True)
     MOVIES_IMG_DIR.mkdir(parents=True, exist_ok=True)
@@ -250,14 +282,15 @@ def main():
     print("Thumbnail Fetcher")
     print("=" * 60)
     
-    if not OMDB_API_KEY:
+    if not OMDB_API_KEY and args.only != "books":
         print("\nNote: OMDB_API_KEY not set. Movie thumbnails will be skipped.")
         print("Get a free API key from: http://www.omdbapi.com/apikey.aspx")
         print("Then set it: export OMDB_API_KEY='your_key_here'\n")
     
-    # Process books and movies
-    process_books()
-    process_movies()
+    if args.only != "movies":
+        process_books()
+    if args.only != "books":
+        process_movies()
     
     print("\n" + "=" * 60)
     print("Done!")
