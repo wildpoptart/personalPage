@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     });
 
     // twitter
-    const menuItems = ['thoughts', 'photos', 'movies', 'books'];
+    const menuItems = ['thoughts', 'projects', 'photos', 'movies', 'books'];
     // Load content when page loads
     menuItems.forEach(item => {
         menu.addItem(item);        

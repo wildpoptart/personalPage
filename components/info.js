@@ -5,7 +5,8 @@ import movies from "../assets/data/movies.json" with { type: "json" };
 import books from "../assets/data/books.json" with {type: "json"};
 import photos from "../assets/data/photos.json" with {type: "json"};
 import about from "../assets/data/about.json" with {type: "json"};
-import mds from "../assets/data/mds.json" with {type: "json"};
+import thoughts from "../assets/data/thoughts.json" with {type: "json"};
+import projects from "../assets/data/projects.json" with {type: "json"};
 
 AddStyle(/*css*/`
     .info-content{
@@ -420,6 +421,7 @@ export default class InfoContent extends HTMLElement{
         if(page === 'books'){ this.loadBooks(); }
         if(page === 'photos'){ this.loadPhotos(); }
         if(page === 'thoughts'){ this.loadThoughts(); }
+        if(page === 'projects'){ this.loadProjects(); }
     };
 
     hide(){
@@ -613,8 +615,8 @@ export default class InfoContent extends HTMLElement{
         const dropdown = document.createElement('select');
         dropdown.className = 'thoughts-dropdown';
 
-        // Populate dropdown with options from mds.json
-        mds.forEach((item, index) => {
+        // Populate dropdown with options from thoughts.json
+        thoughts.forEach((item, index) => {
             const option = document.createElement('option');
             option.value = index;
             option.textContent = item.title;
@@ -647,12 +649,70 @@ export default class InfoContent extends HTMLElement{
         // Add change event listener
         dropdown.addEventListener('change', () => {
             const selectedIndex = parseInt(dropdown.value);
-            loadContent(mds[selectedIndex].file);
+            loadContent(thoughts[selectedIndex].file);
         });
 
         // Load the first item by default
-        if (mds.length > 0) {
-            loadContent(mds[0].file);
+        if (thoughts.length > 0) {
+            loadContent(thoughts[0].file);
+        }
+    };
+
+    async loadProjects() {
+        const infoContent = this;
+        if (this.showing === 'projects') {
+            this.hide();
+            return;
+        }
+
+        this.showing = 'projects';
+
+        const outer = document.createElement('div');
+        outer.className = 'thoughts-container';
+        outer.classList.add('showing');
+
+        const dropdownWrapper = document.createElement('div');
+        dropdownWrapper.className = 'thoughts-dropdown-wrapper';
+
+        const dropdown = document.createElement('select');
+        dropdown.className = 'thoughts-dropdown';
+
+        projects.forEach((item, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+            option.textContent = item.title;
+            dropdown.appendChild(option);
+        });
+
+        const contentArea = document.createElement('div');
+        contentArea.className = 'thoughts-content-area';
+
+        if (projects.length > 0) {
+            dropdownWrapper.appendChild(dropdown);
+            outer.appendChild(dropdownWrapper);
+        }
+
+        outer.appendChild(contentArea);
+        infoContent.appendChild(outer);
+
+        const loadContent = async (fileName) => {
+            try {
+                const response = await fetch(`./assets/data/projects/${fileName}`);
+                const markdownContent = await response.text();
+                contentArea.innerHTML = parseMarkdown(markdownContent);
+            } catch (error) {
+                console.error('Error loading project content:', error);
+                contentArea.innerHTML =
+                    '<p>Error loading content. Please try again later.</p>';
+            }
+        };
+
+        if (projects.length > 0) {
+            dropdown.addEventListener('change', () => {
+                const selectedIndex = parseInt(dropdown.value, 10);
+                loadContent(projects[selectedIndex].file);
+            });
+            loadContent(projects[0].file);
         }
     };
 }
